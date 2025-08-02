@@ -51,3 +51,8 @@
 
 ## pip install djangorestframework
 ## add serilizer is translator between Python objects and Jason database
+
+
+### Speech to text
+## pip install -U openai-whisper
+

@@ -1,5 +1,10 @@
 import React from 'react';
 import { Home } from './Home';
+import { AboutMe } from './AboutMe';
+import { Experience } from './Experience';
+import { Projects } from './Projects';
+import { Contact } from './Contact';
+import { Services } from './Services';
 export const Navbar = () => {
   return (
     <div className="min-h-screen w-full bg-gray-50 scroll-smooth">
@@ -20,33 +25,24 @@ export const Navbar = () => {
           ))}
         </ul>
       </nav>
-
-      {/* Sections */}
-      <section id="home" className="h-screen w-full flex items-center justify-center bg-blue-50">
-        <h1 className="text-5xl font-bold text-blue-700">
-            <Home />
-        </h1>
-      </section>
-
-      <section id="about" className="h-screen w-full flex items-center justify-center bg-gray-100">
-        <h2 className="text-4xl font-semibold text-gray-800">About Me</h2>
-      </section>
-
-      <section id="experience" className="h-screen w-full flex items-center justify-center bg-blue-100">
-        <h2 className="text-4xl font-semibold text-gray-800">Experience</h2>
-      </section>
-
-      <section id="projects" className="h-screen w-full flex items-center justify-center bg-gray-100">
-        <h2 className="text-4xl font-semibold text-gray-800">Projects</h2>
-      </section>
-
-      <section id="contact" className="h-screen w-full flex items-center justify-center bg-blue-100">
-        <h2 className="text-4xl font-semibold text-gray-800">Contact</h2>
-      </section>
-
-      <section id="services" className="h-screen w-full flex items-center justify-center bg-gray-100">
-        <h2 className="text-4xl font-semibold text-gray-800">Services</h2>
-      </section>
+        <div id="home">
+          <Home />
+        </div>
+        <div id="about">
+          <AboutMe />
+        </div>
+        <div id="experience">
+          <Experience />
+        </div>
+        <div id="projects">
+          <Projects />
+        </div>
+        <div id="contact">
+          <Contact />
+        </div>
+        <div id="services">
+          <Services />
+        </div>
     </div>
   );
 };
