@@ -4,8 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import ChatBot from './Components/Chat.jsx'
 import { Navbar } from './Components/Navbar.jsx'
-import { Home } from './Components/Home.jsx';
-
+import { Footer } from './Components/Footer.jsx'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -13,6 +12,7 @@ function App() {
     <div className="w-300 ">
       <Navbar />
       <ChatBot />
+      <Footer />
     </div>
   )
 
