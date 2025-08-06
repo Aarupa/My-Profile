@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="w-300 ">
       <Navbar />
-      <ChatBot />
+      {/* <ChatBot /> */}
       <Footer />
     </div>
   )
