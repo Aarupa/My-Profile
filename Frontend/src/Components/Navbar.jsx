@@ -56,8 +56,8 @@ export const Navbar = () => {
       <div id="about"><AboutMe /></div>
       <div id="experience"><Experience /></div>
       <div id="projects"><Projects /></div>
-      <div id="contact"><Contact /></div>
       <div id="services"><Services /></div>
+      <div id="contact"><Contact /></div>
       
     </div>
   );
