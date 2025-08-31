@@ -5,9 +5,9 @@ export const Home = () => {
   return (
     <section
       id="home"
-      className="min-h-screen w-full flex items-center justify-center bg-blue-100 px-4 sm:px-8 md:px-16 lg:px-32"
+  className="min-h-screen w-full flex items-center justify-center bg-blue-100 px-4 sm:px-8 md:px-16 lg:px-32 xl:px-48 2xl:px-80"
     >
-      <div className="text-center w-full max-w-2xl mx-auto">
+  <div className="text-center w-full max-w-screen-2xl mx-auto">
         <motion.h1
           className="text-3xl sm:text-4xl md:text-5xl font-bold text-blue-800 mb-4 drop-shadow-lg"
           initial={{ opacity: 0, y: -50 }}

@@ -5,7 +5,7 @@ import { FaPhoneAlt, FaEnvelope, FaLinkedin } from "react-icons/fa";
 export const Contact = () => {
   return (
     <section className="w-full py-12 sm:py-20 bg-blue-100 px-4 sm:px-6">
-      <div className="max-w-xl mx-auto text-center">
+  <div className="max-w-screen-2xl mx-auto text-center">
         <motion.h2
           className="text-4xl font-bold text-gray-800 mb-8"
           initial={{ opacity: 0, y: -30 }}
