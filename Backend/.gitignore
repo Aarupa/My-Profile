@@ -1,7 +1,7 @@
-MyAPP/__pycache__/
-MyAPP/*.pyc
-MyAPP/*.pyo
-mysite/__pycache__/
-mysite/*.pyc
-mysite/*.pyo
-.env
+*.Backend/MyAPP/__pycache__
+*.Backend/MyAPP/*.pyc
+*.Backend/MyAPP/*.pyo
+*.Backend/mysite/__pycache__
+*.Backend/mysite/*.pyc
+*.Backend/mysite/*.pyo
+*.Backend/.env

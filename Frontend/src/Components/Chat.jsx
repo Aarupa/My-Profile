@@ -2,7 +2,7 @@ import { useState, useRef } from "react";
 import { FaMicrophone } from "react-icons/fa";
 
 const ChatBot = ({ greeting }) => {
-    const [user_input, setUser_input] = useState("");
+    const [QNS, setQNS] = useState("");
     const [result, setResult] = useState(null);
     const [messages, setMessages] = useState(greeting ? [{ from: "bot", text: greeting }] : []);
     const [loading, setLoading] = useState(false);
@@ -26,7 +26,7 @@ const ChatBot = ({ greeting }) => {
         recognition.maxAlternatives = 1;
         recognition.onresult = (event) => {
             const transcript = event.results[0][0].transcript;
-            setUser_input("");
+            setQNS("");
             sendSpeechToBackend(transcript);
         };
         recognition.onend = () => {
@@ -45,12 +45,12 @@ const ChatBot = ({ greeting }) => {
         setMessages((prev) => [...prev, { from: "user", text: speechText }]);
         setLoading(true);
         try {
-            const response = await fetch("http://127.0.0.1:8000/MyAPP/Chat/", {
+            const response = await fetch("http://127.0.0.1:8000/MyAPP/MyInfo/", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify({ user_input: speechText }),
+                body: JSON.stringify({ QNS: speechText }),
             });
             const data = await response.json();
             if (response.ok) {
@@ -77,16 +77,16 @@ const ChatBot = ({ greeting }) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (!user_input.trim()) return;
-        setMessages((prev) => [...prev, { from: "user", text: user_input }]);
+        if (!QNS.trim()) return;
+        setMessages((prev) => [...prev, { from: "user", text: QNS }]);
         setLoading(true);
         try {
-            const response = await fetch("http://127.0.0.1:8000/MyAPP/Chat/", {
+            const response = await fetch("http://127.0.0.1:8000/MyAPP/MyInfo/", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify({ user_input: user_input }),
+                body: JSON.stringify({ QNS: QNS }),
             });
             const data = await response.json();
             if (response.ok) {
@@ -99,7 +99,7 @@ const ChatBot = ({ greeting }) => {
         } catch (error) {
             setMessages((prev) => [...prev, { from: "bot", text: "Server error: " + error.message }]);
         }
-        setUser_input("");
+        setQNS("");
         setLoading(false);
     };
 
@@ -121,8 +121,8 @@ const ChatBot = ({ greeting }) => {
             <form onSubmit={handleSubmit} className="flex gap-2 w-full items-center">
                 <input
                     type="text"
-                    value={user_input}
-                    onChange={(e) => setUser_input(e.target.value)}
+                    value={QNS}
+                    onChange={(e) => setQNS(e.target.value)}
                     placeholder="Type your message..."
                     className="flex-1 p-2 border-2 border-blue-500 rounded-xl focus:outline-none focus:border-blue-700 bg-white text-gray-900 text-base"
                     required

@@ -22,7 +22,7 @@ class ChatAPIView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
 
-class Knowledge_baseAPIView(APIView):
+class Knowledge_BaseAPIView(APIView):
     def post(self, request):
         serializer = Knowledge_BaseSerializer(data = request.data)
         if serializer.is_valid():

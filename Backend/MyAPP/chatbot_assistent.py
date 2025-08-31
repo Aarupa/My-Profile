@@ -1,6 +1,8 @@
+
 from mistralai import Mistral
 import os
 from dotenv import load_dotenv
+
 def chat(user_input):
     load_dotenv()
     api_key = os.getenv('MISTRAL_API_KEY')
