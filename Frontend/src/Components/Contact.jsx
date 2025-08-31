@@ -4,7 +4,7 @@ import { FaPhoneAlt, FaEnvelope, FaLinkedin } from "react-icons/fa";
 
 export const Contact = () => {
   return (
-    <section className="w-full py-20 bg-blue-100 px-6">
+    <section className="w-full py-12 sm:py-20 bg-blue-100 px-4 sm:px-6">
       <div className="max-w-xl mx-auto text-center">
         <motion.h2
           className="text-4xl font-bold text-gray-800 mb-8"
@@ -15,7 +15,7 @@ export const Contact = () => {
           Contact
         </motion.h2>
 
-        <ul className="space-y-4 text-lg text-gray-700">
+  <ul className="space-y-4 text-base sm:text-lg text-gray-700">
           <motion.li
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

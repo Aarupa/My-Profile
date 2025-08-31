@@ -26,7 +26,7 @@ export const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="w-full py-16 bg-blue-50 px-6">
+    <section id="projects" className="w-full py-12 sm:py-16 bg-blue-50 px-4 sm:px-6">
       <div className="max-w-5xl mx-auto">
         <motion.h2
           className="text-4xl font-bold text-gray-800 mb-10 text-center"
@@ -37,11 +37,11 @@ export const Projects = () => {
           Projects
         </motion.h2>
 
-        <div className="grid sm:grid-cols-2 gap-6">
+  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              className="bg-white p-6 rounded-xl shadow-md"
+              className="bg-white p-4 sm:p-6 rounded-xl shadow-md hover:shadow-lg transition duration-200 hover:scale-[1.03]"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}

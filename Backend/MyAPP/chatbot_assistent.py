@@ -2,7 +2,7 @@ from mistralai import Mistral
 
 def chat(user_input):
 
-    api_key = ''
+    api_key = 'rHj6z73uHptDjfxP7LAMS4hWeFx6J9qR'
     model = 'mistral-large-latest'
     client = Mistral(api_key = api_key)
     chat_response = client.chat.complete(
