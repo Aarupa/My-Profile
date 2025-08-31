@@ -1,5 +1,5 @@
 ## Install python 3.*
-##################################################################################################rHj6z73uHptDjfxP7LAMS4hWeFx6J9qR
+##################################################################################################
 ## for windows - DOWNLOAD PYTHON FROM - https://www.python.org/downloads/
 ## Set Env Variable
 

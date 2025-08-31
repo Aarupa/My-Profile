@@ -1,10 +1,11 @@
 from mistralai import Mistral
-
+import os
+from dotenv import load_dotenv
 def chat(user_input):
-
-    api_key = ''
+    load_dotenv()
+    api_key = os.getenv('MISTRAL_API_KEY')
     model = 'mistral-large-latest'
-    client = Mistral(api_key = api_key)
+    client = Mistral(api_key=api_key)
     chat_response = client.chat.complete(
         model=model,
         messages=[

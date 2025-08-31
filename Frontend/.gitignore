@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+*.Frontend/node_modules
+*.Frontend/package-lock.json
+*.Frontend/package.json

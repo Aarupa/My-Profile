@@ -3,9 +3,11 @@ import requests
 import numpy as np
 import faiss
 import os
+from dotenv import load_dotenv
 from .chatbot_assistent import chat
 
-api_key = ''
+load_dotenv()
+api_key = os.getenv('MISTRAL_API_KEY')
 client = Mistral(api_key=api_key)
 def Knowledge_Base(QNS):
     text = """My Name is Dinesh Ghadge.\n I am from Gangapur Dist: Chhatrapati Sambhaji Nagar.\n I am currently working in Pune."""
