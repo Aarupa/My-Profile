@@ -1,0 +1,7 @@
+MyAPP/__pycache__/
+MyAPP/*.pyc
+MyAPP/*.pyo
+mysite/__pycache__/
+mysite/*.pyc
+mysite/*.pyo
+.env
