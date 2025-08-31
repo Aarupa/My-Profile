@@ -3,8 +3,10 @@ import requests
 import numpy as np
 import faiss
 import os
-from getpass import getpass
+from .chatbot_assistent import chat
 
+api_key = ''
+client = Mistral(api_key=api_key)
 def Knowledge_Base(QNS):
     text = """My Name is Dinesh Ghadge.\n I am from Gangapur Dist: Chhatrapati Sambhaji Nagar.\n I am currently working in Pune."""
 

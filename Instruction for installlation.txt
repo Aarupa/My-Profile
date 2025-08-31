@@ -1,5 +1,5 @@
 ## Install python 3.*
-##################################################################################################BL0JXIonmFwenP0AoSCaZWgqIBifZF6n
+##################################################################################################rHj6z73uHptDjfxP7LAMS4hWeFx6J9qR
 ## for windows - DOWNLOAD PYTHON FROM - https://www.python.org/downloads/
 ## Set Env Variable
 
@@ -56,3 +56,5 @@
 ### Speech to text
 ## pip install -U openai-whisper
 
+### Creating Knowledge base vector db
+## pip install faiss-cpu
