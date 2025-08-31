@@ -5,11 +5,11 @@ export const Home = () => {
   return (
     <section
       id="home"
-      className="h-screen w-full flex items-center justify-center bg-blue-100 px-4"
+  className="min-h-screen w-full flex items-center justify-center bg-blue-100 px-4 sm:px-8 md:px-16 lg:px-32 xl:px-48 2xl:px-80"
     >
-      <div className="text-center">
+  <div className="text-center w-full max-w-screen-2xl mx-auto">
         <motion.h1
-          className="text-5xl font-bold text-blue-800 mb-4"
+          className="text-3xl sm:text-4xl md:text-5xl font-bold text-blue-800 mb-4 drop-shadow-lg"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -18,7 +18,7 @@ export const Home = () => {
         </motion.h1>
 
         <motion.h2
-          className="text-2xl text-gray-700 mb-6"
+          className="text-lg sm:text-xl md:text-2xl text-gray-700 mb-6"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -27,7 +27,7 @@ export const Home = () => {
         </motion.h2>
 
         <motion.p
-          className="text-lg text-gray-600 max-w-xl mx-auto mb-8"
+          className="text-base sm:text-lg text-gray-600 max-w-xl mx-auto mb-8"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
@@ -37,7 +37,7 @@ export const Home = () => {
 
         <motion.a
           href="#projects"
-          className="inline-block bg-blue-700 text-white text-lg font-medium px-6 py-3 rounded-xl hover:bg-blue-800 transition"
+          className="inline-block bg-blue-700 text-white text-base sm:text-lg font-medium px-6 py-3 rounded-xl hover:bg-blue-800 transition shadow-lg hover:scale-105 active:scale-95 duration-200"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
