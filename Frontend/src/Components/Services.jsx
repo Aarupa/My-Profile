@@ -25,8 +25,8 @@ const services = [
 
 export const Services = () => {
   return (
-    <section id="services" className="w-full py-16 bg-blue-50 px-6">
-      <div className="max-w-5xl mx-auto text-center">
+    <section id="services" className="w-full py-12 sm:py-16 bg-blue-50 px-4 sm:px-6">
+  <div className="max-w-screen-3xl mx-auto text-center px-2 2xl:px-96">
         <motion.h2
           className="text-4xl font-bold text-gray-800 mb-10"
           initial={{ opacity: 0, y: -30 }}
@@ -36,11 +36,11 @@ export const Services = () => {
           Upcoming Services
         </motion.h2>
 
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {services.map((service, index) => (
             <motion.div
               key={index}
-              className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition relative"
+              className="bg-white p-4 sm:p-6 rounded-xl shadow-md hover:shadow-lg transition relative hover:scale-[1.03] duration-200"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
