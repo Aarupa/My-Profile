@@ -5,11 +5,23 @@ import faiss
 import os
 from dotenv import load_dotenv
 from .chatbot_assistent import chat
+from .Url_KB import get_text_from_url
 
 load_dotenv()
 api_key = os.getenv('MISTRAL_API_KEY')
 client = Mistral(api_key=api_key)
 def Knowledge_Base(QNS):
+
+    ## Get text for text file
+    #with open("knowledge_base.txt", "r", encoding="utf-8") as f:
+    #    kb_text = f.read()
+    
+
+    ## Get text from URL
+    # url = "https://indeedinspiring.com/"
+    # text = get_text_from_url(url)
+
+    ## Hardcoded text
     text = """My Name is Dinesh Ghadge.\n I am from Gangapur Dist: Chhatrapati Sambhaji Nagar.\n I am currently working in Pune."""
 
     # split doc into chunks
@@ -44,7 +56,7 @@ def Knowledge_Base(QNS):
     ---------------------
     {retrieved_chunk}
     ---------------------
-    Given the context information and not prior knowledge, answer the query.
+    Given the context information and not prior knowledge, answer the query in human like language in concise manner.
     Query: {question}
     Answer:
     """

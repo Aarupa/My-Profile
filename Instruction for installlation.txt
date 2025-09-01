@@ -58,3 +58,7 @@
 
 ### Creating Knowledge base vector db
 ## pip install faiss-cpu
+
+### extracting data from url(website)
+## pip install beautifulsoup4 lxml
+## pip install requests
