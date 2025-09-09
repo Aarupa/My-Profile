@@ -62,3 +62,6 @@
 ### extracting data from url(website)
 ## pip install beautifulsoup4 lxml
 ## pip install requests
+
+### extracting data from docx and pdf
+## pip install python-docx PyPDF2

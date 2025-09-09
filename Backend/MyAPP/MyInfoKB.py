@@ -5,7 +5,9 @@ import faiss
 import os
 from dotenv import load_dotenv
 from .chatbot_assistent import chat
-from .Url_KB import get_text_from_url
+# from .Url_KB import get_text_from_url
+# from .Pdf_KB import extract_text_from_pdf
+# from .Docx_KB import extract_text_from_docx
 
 load_dotenv()
 api_key = os.getenv('MISTRAL_API_KEY')
@@ -20,6 +22,13 @@ def Knowledge_Base(QNS):
     ## Get text from URL
     # url = "https://indeedinspiring.com/"
     # text = get_text_from_url(url)
+
+    ## Get text from PDF file
+    # text = extract_text_from_pdf("path/to/pdf")
+
+    ## Get text from DOCX file
+    # doc_path = os.path.join(os.getcwd(), 'Backend', 'MyAPP', 'Documents', 'Dinesh_Ghadge_Resume.docx')
+    # text = extract_text_from_docx(doc_path)
 
     ## Hardcoded text
     text = """My Name is Dinesh Ghadge.\n I am from Gangapur Dist: Chhatrapati Sambhaji Nagar.\n I am currently working in Pune."""
@@ -56,7 +65,7 @@ def Knowledge_Base(QNS):
     ---------------------
     {retrieved_chunk}
     ---------------------
-    Given the context information and not prior knowledge, answer the query in human like language in concise manner.
+    Given the context information and not prior knowledge, answer the query in human like language in concise manner. if answer is too long, summarize it in 50 words or less.
     Query: {question}
     Answer:
     """
