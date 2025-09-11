@@ -1,23 +1,17 @@
-from mistralai import Mistral
-import requests
 import numpy as np
+import requests
 import faiss
-import os
-from dotenv import load_dotenv
-from .chatbot_assistent import chat
+from .chatbot_assistent import chat_mistral, chat_genai
+from .Embeding_models import get_text_embedding_mistral, get_text_embedding_gemini
 # from .Url_KB import get_text_from_url
 # from .Pdf_KB import extract_text_from_pdf
 # from .Docx_KB import extract_text_from_docx
 
-load_dotenv()
-api_key = os.getenv('MISTRAL_API_KEY')
-client = Mistral(api_key=api_key)
 def Knowledge_Base(QNS):
 
     ## Get text for text file
     #with open("knowledge_base.txt", "r", encoding="utf-8") as f:
     #    kb_text = f.read()
-    
 
     ## Get text from URL
     # url = "https://indeedinspiring.com/"
@@ -27,7 +21,7 @@ def Knowledge_Base(QNS):
     # text = extract_text_from_pdf("path/to/pdf")
 
     ## Get text from DOCX file
-    # doc_path = os.path.join(os.getcwd(), 'Backend', 'MyAPP', 'Documents', 'Dinesh_Ghadge_Resume.docx')
+    # doc_path = os.path.join(os.getcwd(), '.','Backend', 'MyAPP', 'Documents', 'Dinesh_Ghadge_Resume.docx')
     # text = extract_text_from_docx(doc_path)
 
     ## Hardcoded text
@@ -36,15 +30,12 @@ def Knowledge_Base(QNS):
     # split doc into chunks
     chunk_size = 2048
     chunks = [text[i:i + chunk_size] for i in range(0, len(text), chunk_size)]
-
-    # Create embeddings for each text chunk
-    def get_text_embedding(input):
-        embeddings_batch_response = client.embeddings.create(
-              model="mistral-embed",
-              inputs=input
-          )
-        return embeddings_batch_response.data[0].embedding
-    text_embeddings = np.array([get_text_embedding(chunk) for chunk in chunks])
+    
+    # Create embeddings for each chunk using Mistral embeddings API
+    # text_embeddings = np.array([get_text_embedding_mistral(chunk) for chunk in chunks])
+    
+    # Create embeddings for each chunk using Google Gemini embeddings API
+    text_embeddings = np.array([get_text_embedding_gemini(chunk) for chunk in chunks])
 
     # Load into a vector database
     d = text_embeddings.shape[1]
@@ -53,7 +44,10 @@ def Knowledge_Base(QNS):
 
     # Create embeddings for a question
     question = QNS
-    question_embeddings = np.array([get_text_embedding(question)])
+    # Using Mistral embeddings API
+    #question_embeddings = np.array([get_text_embedding_mistral(question)])
+    # Using Google Gemini embeddings API
+    question_embeddings = np.array([get_text_embedding_gemini(question)])
 
     # Retrieve similar chunks from the vector database
     D, I = index.search(question_embeddings, k=2) # distance, index
@@ -71,4 +65,4 @@ def Knowledge_Base(QNS):
     """
 
     # Getting output from chatbot
-    return chat(prompt)
+    return chat_genai(prompt)
