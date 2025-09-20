@@ -58,3 +58,13 @@
 
 ### Creating Knowledge base vector db
 ## pip install faiss-cpu
+
+### extracting data from url(website)
+## pip install beautifulsoup4 lxml
+## pip install requests
+
+### extracting data from docx and pdf
+## pip install python-docx PyPDF2
+
+### Google genai API
+pip install -q -U google-genai
